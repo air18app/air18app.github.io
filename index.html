@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI成人短剧最新地址发布页 - air18.app</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    :root{
+      --bg1:#000000;
+      --bg2:#351800;
+      --text:#ffe9cf;
+      --muted:#d7b38b;
+      --primary:#ff9f0a;
+      --border: rgba(255,159,10,.35);
+      --shadow: 0 18px 45px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background:
+        radial-gradient(900px 450px at 18% 0%, rgba(250, 150, 0, 0.138), transparent 55%),
+        radial-gradient(700px 400px at 95% 10%, rgba(164, 77, 0, 0.18), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg1));
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .shell{
+      width:min(860px, 100%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap: 32px;
+    }
+
+    .logo{
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      object-fit: contain;
+      background: rgba(0,0,0,.18);
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+
+    .wrap{
+      width:100%;
+      background: rgba(255, 160, 60, .08);
+      border: 1px solid rgba(255,159,10,.25);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 16px;
+    }
+    h1{
+      margin:0;
+      font-size: 22px;
+      letter-spacing:.5px;
+    }
+    .sub{
+      margin-top:8px;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .lang-toggle{
+      border:1px solid rgba(255,159,10,.25);
+      background: rgba(255,159,10,.10);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:13px;
+      line-height:1;
+      transition: background .2s ease, border-color .2s ease;
+      white-space:nowrap;
+    }
+    .lang-toggle:hover{
+      background: rgba(255,159,10,.18);
+      border-color: rgba(255,159,10,.45);
+    }
+
+    .card{
+      margin-top:20px;
+      margin-bottom: 20px;
+      padding:16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,159,10,.20);
+      background: rgba(0,0,0,.12);
+    }
+
+    .label{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:8px;
+    }
+
+    .url-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .url-box{
+      flex:1 1 420px;
+      padding:12px 14px;
+      border-radius: 12px;
+      border:1px solid rgba(255,159,10,.28);
+      background: rgba(0,0,0,.20);
+      overflow:auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      color: var(--text);
+      word-break: break-all;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    button{
+      appearance:none;
+      border:1px solid rgba(255,159,10,.25);
+      background: rgba(255,159,10,.10);
+      color: var(--text);
+      padding: 12px 26px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight:700;
+      transition: transform .05s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    button:hover{
+      background: rgba(255,159,10,.18);
+      border-color: rgba(255,159,10,.45);
+      box-shadow: 0 10px 26px rgba(255,159,10,.12);
+    }
+    button:active{ transform: translateY(1px); }
+
+    .primary{
+      border-color: rgba(255,159,10,.70);
+      background: linear-gradient(180deg, rgba(255,159,10,.92), rgba(255,127,0,.72));
+      color:#231100;
+      text-shadow: 0 1px 0 rgba(255,255,255,.25);
+      padding: 12px 26px;
+      min-width: 150px;
+    }
+
+    #openBtn:hover{ color:#ffffff !important; }
+
+    .status{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,159,10,.28);
+      background: rgba(0,0,0,.12);
+      color: var(--muted);
+    }
+    .pill.ok{
+      border-color: rgba(80,220,130,.45);
+      color: #bff3d0;
+      background: rgba(80,220,130,.10);
+    }
+    .pill.bad{
+      border-color: rgba(255,90,90,.45);
+      color: #ffd2d2;
+      background: rgba(255,90,90,.10);
+    }
+    .pill.loading{
+      border-color: rgba(255,159,10,.45);
+      color: var(--text);
+      background: rgba(255,159,10,.10);
+    }
+
+    .footer{
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align:center;
+    }
+
+    @media (max-width:520px){
+      .shell{ gap: 24px; }
+      .logo{ width:72px; height:72px; border-radius: 12px; }
+      header{flex-direction:column}
+      .primary{min-width: 130px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <svg alt="Logo" class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title>air18</title><defs><linearGradient x1="11.064%" y1="-12.119%" x2="100%" y2="100%" id="a"><stop stop-color="#3e2100" offset="0%"/><stop stop-color="#050300" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><rect fill="url(#a)" width="64" height="64" rx="14"/><path d="M30 15H17a2 2 0 0 0-2 2v30a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V17a2 2 0 0 0-2-2m10.5 17a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17m0 0a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17m-20.962-5.61a.55.55 0 0 1 .552.04l7.438 5.15a.51.51 0 0 1 .222.42.51.51 0 0 1-.222.42l-7.438 5.15a.55.55 0 0 1-.552.04.51.51 0 0 1-.288-.458V26.848c0-.192.111-.37.288-.458" fill="#ff9903" fill-rule="nonzero"/></g></svg>
+    <div style="text-align:center;">
+      <h1 style="margin:0;font-size:32px;">air18.app</h1>
+      <div style="margin-top:3px;font-size:24px;">AI成人剧场</div>
+    </div>
+
+    <main class="wrap">
+      <header>
+        <div>
+          <h1 id="welcomeTitle" data-i18n="welcomeTitle">欢迎回家</h1>
+          <div class="sub" id="welcomeSub" data-i18n="welcomeSub">
+            请以此页面展示的最新地址为准，若遇到无法访问，请稍后重试或发邮件给我们 E-mail：air18app@hotmail.com
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="color:var(--muted);font-size:13px;white-space:nowrap;">language:</span>
+          <button class="lang-toggle" id="langBtn" type="button">Auto / 自动</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="label" id="newAddressLabel" data-i18n="newAddressLabel">最新地址</div>
+
+        <div class="url-row">
+          <div class="url-box" id="urlBox">https://NEW_URL_HERE/</div>
+
+          <div class="actions">
+            <button class="primary" id="openBtn" data-i18n="openNowBtn">立即访问</button>
+            <button id="copyBtn" data-i18n="copyBtn">复制</button>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="status" aria-live="polite">
+        <span class="pill loading" id="statusPill" data-i18n="statusPill">状态：检测中…</span>
+        <span id="statusText" data-i18n="statusText">正在测试网址可访问性。</span>
+        <span id="recheckWrap"></span>
+      </div>
+    </main>
+    <div class="footer" id="footerText" data-i18n="footerText">
+        说明：建议把本页收藏起来，走失时更好找回家。
+    </div>
+  </div>
+
+  <script>
+    // 你只需要改这里：
+    const NEW_URL = "https://air18app.net/";
+
+    const urlBox = document.getElementById("urlBox");
+    const openBtn = document.getElementById("openBtn");
+    const copyBtn = document.getElementById("copyBtn");
+
+    const statusPill = document.getElementById("statusPill");
+    const statusText = document.getElementById("statusText");
+    const recheckWrap = document.getElementById("recheckWrap");
+
+    const langBtn = document.getElementById("langBtn");
+
+    urlBox.textContent = NEW_URL;
+
+    // -------- i18n --------
+    const dict = {
+      zh: {
+        autoLabel: "Auto / 自动",
+        welcomeTitle: "欢迎回家",
+        welcomeSub: "请以此页面展示的最新地址为准，若遇到无法访问请检查您的网络，请稍后重试或发邮件给我们 E-mail：air18app@hotmail.com。",
+        newAddressLabel: "最新地址",
+        openNowBtn: "立即访问",
+        copyBtn: "复制",
+        footerText: "说明：建议把本页收藏起来，走失时更好找回家。",
+        recheckBtnText: "再次测试",
+
+        // status pill titles (不同状态不同文案)
+        statusPillLoading: "状态：检测中…",
+        statusPillOk: "状态：正常",
+        statusPillBad: "状态：异常",
+
+        // status text bodies (不同失败原因也可区分)
+        statusLoadingText: "正在测试网址可访问性…",
+        statusOkText: "检测成功，目前网络正常。",
+        statusBadTimeout: "检测超时，请检查您当地网络再次测试。",
+        statusBadFetch: "检测失败：您目前的网络不可访问或受浏览器请求策略影响，你仍可点击“立即访问”尝试一下。",
+        statusBadDefault: "检测到不可访问。"
+      },
+      en: {
+        autoLabel: "Auto",
+        welcomeTitle: "Welcome back",
+        welcomeSub: "Please refer to the latest address displayed on this page. If you encounter access problems, please check your network and try again later, or email us at air18app@hotmail.com.",
+        newAddressLabel: "Latest address",
+        openNowBtn: "Open now",
+        copyBtn: "Copy",
+        footerText: "Note: Consider bookmarking this page for easy return if you get lost.",
+        recheckBtnText: "Try again",
+
+        statusPillLoading: "Status: checking…",
+        statusPillOk: "Status: accessible",
+        statusPillBad: "Status: not accessible",
+
+        statusLoadingText: "Testing the address accessibility…",
+        statusOkText: "Check succeeded—currently accessible.",
+        statusBadTimeout: "Timeout—network may be slow or the site isn’t responding.",
+        statusBadFetch: "Check failed—may be unreachable or blocked by browser request policies. You can still click “Open now”.",
+        statusBadDefault: "The address appears inaccessible."
+      }
+    };
+
+    let langMode = "auto"; // auto | zh | en
+    let currentLang = "zh";
+
+    function detectLangByBrowser(){
+      const l = (navigator.language || "").toLowerCase();
+      if(l.includes("zh")) return "zh";
+      return "en";
+    }
+
+    function applyTranslations(){
+      const t = dict[currentLang];
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if(!key) return;
+        // 这里不再使用 statusPill / statusText 的旧键，改为直接动态渲染 status
+        if(key === "statusPill") el.textContent = t.statusPillLoading;
+        else if(key === "statusText") el.textContent = t.statusLoadingText;
+        else if(t[key] !== undefined) el.textContent = t[key];
+      });
+
+      const btn = recheckWrap.querySelector("button");
+      if(btn) btn.textContent = t.recheckBtnText;
+    }
+
+    function setLang(mode){
+      langMode = mode;
+      currentLang = (langMode === "auto") ? detectLangByBrowser() : mode;
+
+      langBtn.textContent = (langMode === "auto") ? dict[currentLang].autoLabel : currentLang.toUpperCase();
+      applyTranslations();
+
+      // 同步当前状态（不然可能仍显示“检测中…”）
+      syncCurrentStatusUI();
+    }
+
+    langBtn.addEventListener("click", () => {
+      if(langMode === "auto") setLang("zh");
+      else if(langMode === "zh") setLang("en");
+      else setLang("auto");
+    });
+
+    // -------- recheck button (only if you want it) --------
+    (function renderRecheckButton(){
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.style.padding = "8px 16px";
+      btn.style.borderRadius = "12px";
+      btn.style.fontWeight = "700";
+      btn.style.background = "rgba(255,159,10,.10)";
+      btn.style.border = "1px solid rgba(255,159,10,.25)";
+      btn.style.boxShadow = "none";
+      btn.textContent = dict[currentLang].recheckBtnText;
+      btn.addEventListener("click", runCheck);
+      recheckWrap.appendChild(btn);
+      btn.id = "recheckBtn";
+    })();
+
+    function i18nStatus(kind){
+      const t = dict[currentLang];
+      if(kind === "loading") return t.statusLoadingText;
+      if(kind === "ok") return t.statusOkText;
+      if(kind === "badTimeout") return t.statusBadTimeout;
+      if(kind === "badFetch") return t.statusBadFetch;
+      return t.statusBadDefault;
+    }
+
+    function syncCurrentStatusUI(){
+      const t = dict[currentLang];
+
+      if(statusPill.classList.contains("loading")){
+        statusPill.textContent = t.statusPillLoading;
+        // statusText 不清空，尽量保留你 runCheck 设置的 text：
+        // 但如果当前就是 loading，就把它同步成 loading 文案
+        statusText.textContent = i18nStatus("loading");
+      } else if(statusPill.classList.contains("ok")){
+        statusPill.textContent = t.statusPillOk;
+        // 如果你希望切换语言后成功状态文字也同步，就改成下面这一行
+        statusText.textContent = i18nStatus("ok");
+      } else if(statusPill.classList.contains("bad")){
+        statusPill.textContent = t.statusPillBad;
+        // 失败原因的细分文案在 runCheck 中已写死，这里就按默认失败文案同步
+        // 你要更精确的话我可以继续改成保存最后一次失败原因。
+        statusText.textContent = i18nStatus("badDefault");
+      } else {
+        // 默认回到 loading
+        statusPill.textContent = t.statusPillLoading;
+        statusText.textContent = i18nStatus("loading");
+      }
+    }
+
+    function setStatus(kind, text){
+      statusPill.className = "pill";
+      statusPill.classList.remove("loading","ok","bad");
+
+      if(kind === "loading") statusPill.classList.add("loading");
+      if(kind === "ok") statusPill.classList.add("ok");
+      if(kind === "bad") statusPill.classList.add("bad");
+
+      // statusPill 不再永远是“检测中…”，而是根据状态切换不同文案
+      const t = dict[currentLang];
+      if(kind === "loading") statusPill.textContent = t.statusPillLoading;
+      if(kind === "ok") statusPill.textContent = t.statusPillOk;
+      if(kind === "bad") statusPill.textContent = t.statusPillBad;
+
+      statusText.textContent = text || "";
+    }
+
+    function setRecheckEnabled(enabled){
+      const btn = document.getElementById("recheckBtn");
+      if(!btn) return;
+      btn.disabled = !enabled;
+      btn.style.opacity = enabled ? "1" : ".6";
+      btn.style.cursor = enabled ? "pointer" : "not-allowed";
+    }
+
+    // -------- open / copy --------
+    openBtn.addEventListener("click", () => {
+      window.open(NEW_URL, "_blank", "noopener,noreferrer");
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(NEW_URL);
+        copyBtn.textContent = (currentLang === "en") ? "Copied" : "已复制";
+        setTimeout(() => copyBtn.textContent = dict[currentLang].copyBtn, 1200);
+      }catch(e){
+        const ta = document.createElement("textarea");
+        ta.value = NEW_URL;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+
+        copyBtn.textContent = (currentLang === "en") ? "Copied" : "已复制";
+        setTimeout(() => copyBtn.textContent = dict[currentLang].copyBtn, 1200);
+      }
+    });
+
+    // -------- URL check --------
+    async function testUrl(url){
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+
+      try {
+        // 先 HEAD
+        try{
+          const res = await fetch(url, {
+            method: "HEAD",
+            mode: "cors",
+            redirect: "follow",
+            signal: controller.signal,
+            cache: "no-store"
+          });
+          return { ok: !!res && res.ok, via: "HEAD", code: res ? res.status : null };
+        } catch (headErr){
+          // 再 GET（如果站点不允许 HEAD 或 HEAD 被拦截）
+          const res2 = await fetch(url, {
+            method: "GET",
+            mode: "cors",
+            redirect: "follow",
+            signal: controller.signal,
+            cache: "no-store"
+          });
+          return { ok: !!res2 && res2.ok, via: "GET", code: res2 ? res2.status : null };
+        }
+      } catch (e){
+        if (e && e.name === "AbortError") return { ok: false, error: "AbortError" };
+        return { ok: false, error: "FetchError" };
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+
+    async function runCheck(){
+      setRecheckEnabled(false);
+      setStatus("loading", i18nStatus("loading"));
+
+      const btn = document.getElementById("recheckBtn");
+      if(btn) btn.textContent = "...";
+
+      const result = await testUrl(NEW_URL);
+
+      if(result.ok){
+        const codeText = result.code ? (currentLang === "en" ? ` (HTTP ${result.code})` : `（HTTP ${result.code}）`) : "";
+        setStatus("ok", dict[currentLang].statusOkText + codeText);
+      } else {
+        if(result.error === "AbortError"){
+          setStatus("bad", i18nStatus("badTimeout"));
+        } else {
+          setStatus("bad", i18nStatus("badFetch"));
+        }
+      }
+
+      setRecheckEnabled(true);
+      if(btn) btn.textContent = dict[currentLang].recheckBtnText;
+    }
+
+    // 初始化语言并开始检测
+    setLang("auto");
+    window.addEventListener("load", runCheck);
+  </script>
+  <!-- Default Statcounter code -->
+  <script type="text/javascript">
+  var sc_project=13339341; 
+  var sc_invisible=1; 
+  var sc_security="3bce2d85"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+  Statcounter" href="https://statcounter.com/" target="_blank"><img
+  class="statcounter" src="https://c.statcounter.com/13339341/0/3bce2d85/1/"
+  alt="Web Analytics Made Easy - Statcounter"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+</body>
+</html>
