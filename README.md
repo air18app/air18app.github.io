@@ -7,7 +7,8 @@
 **精彩短剧，随时畅看 · 收藏入口，永不迷路**
 
 [![花魁短剧](https://img.shields.io/badge/🤖_AI成人剧场-国际官网-ff9008?style=for-the-badge)](https://air18.app)
-[![永久地址](https://img.shields.io/badge/永久主站-air18app.net-2ecc71?style=for-the-badge)](https://air18app.net)
+[![永久地址](https://img.shields.io/badge/永久主站线路一-air18app.com-2ecc71?style=for-the-badge)](https://air18app.com)
+[![永久地址](https://img.shields.io/badge/永久主站线路二-air18app.net-2ecc71?style=for-the-badge)](https://air18app.net)
 [![Telegram](https://img.shields.io/badge/Telegram-加入社群-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/air18app)
 
 欢迎来到 **AI成人剧场（air18.app）** GitHub 导航与防走失信息页。
@@ -27,8 +28,8 @@
 | 入口类型 | 访问地址 | 说明 |
 | :---: | :---: | :--- |
 | 🏠 **永久国际官网** | **[air18.app](https://air18.app)** | ⭐ 推荐优先收藏 |
-| 🚀 **永久主战地址** | **[air18app.net](https://air18app.net)** | 国际稳定入口 |
-| ⚡ **备用主战入口** | [air18app.com](https://air18app.com) | 备用入口网址 |
+| 🚀 **永久主战地址** | **[air18app.com](https://air18app.com)** | 国际稳定入口 |
+| ⚡ **备用主战入口** | **[air18app.net](https://air18app.net)** | 国际稳定入口 |
 
 ---
 
@@ -49,7 +50,7 @@
 A：永久地址为 **[https://air18.app](https://air18.app)**。
 
 **Q：主站无法访问怎么办？**  
-A：可尝试 **[air18app.net](https://air18app.net)**、**[air18app.com](https://air18app.com)**
+A：可尝试 **[air18app.com](https://air18app.com)**、**[air18app.com](https://air18app.com)**
 
 ---
 
