@@ -1,560 +1,260 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI成人短剧最新地址发布页 - air18.app</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <style>
-    :root{
-      --bg1:#000000;
-      --bg2:#351800;
-      --text:#ffe9cf;
-      --muted:#d7b38b;
-      --primary:#ff9f0a;
-      --border: rgba(255,159,10,.35);
-      --shadow: 0 18px 45px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-      background:
-        radial-gradient(900px 450px at 18% 0%, rgba(250, 150, 0, 0.138), transparent 55%),
-        radial-gradient(700px 400px at 95% 10%, rgba(164, 77, 0, 0.18), transparent 55%),
-        linear-gradient(180deg, var(--bg2), var(--bg1));
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-
-    .shell{
-      width:min(860px, 100%);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: 32px;
-    }
-
-    .logo{
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
-      object-fit: contain;
-      background: rgba(0,0,0,.18);
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-    }
-
-    .wrap{
-      width:100%;
-      background: rgba(255, 160, 60, .08);
-      border: 1px solid rgba(255,159,10,.25);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 22px;
-      backdrop-filter: blur(10px);
-    }
-
-    header{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 16px;
-    }
-    h1{
-      margin:0;
-      font-size: 22px;
-      letter-spacing:.5px;
-    }
-    .sub{
-      margin-top:8px;
-      color:var(--muted);
-      line-height:1.5;
-      font-size:14px;
-    }
-
-    .lang-toggle{
-      border:1px solid rgba(255,159,10,.25);
-      background: rgba(255,159,10,.10);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius:999px;
-      cursor:pointer;
-      font-weight:700;
-      font-size:13px;
-      line-height:1;
-      transition: background .2s ease, border-color .2s ease;
-      white-space:nowrap;
-    }
-    .lang-toggle:hover{
-      background: rgba(255,159,10,.18);
-      border-color: rgba(255,159,10,.45);
-    }
-
-    .card{
-      margin-top:20px;
-      margin-bottom: 20px;
-      padding:16px;
-      border-radius: 14px;
-      border:1px solid rgba(255,159,10,.20);
-      background: rgba(0,0,0,.12);
-    }
-
-    .label{
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:8px;
-    }
-
-    .url-row{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .url-box{
-      flex:1 1 420px;
-      padding:12px 14px;
-      border-radius: 12px;
-      border:1px solid rgba(255,159,10,.28);
-      background: rgba(0,0,0,.20);
-      overflow:auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-      color: var(--text);
-      word-break: break-all;
-    }
-
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    button{
-      appearance:none;
-      border:1px solid rgba(255,159,10,.25);
-      background: rgba(255,159,10,.10);
-      color: var(--text);
-      padding: 12px 26px;
-      border-radius: 12px;
-      cursor:pointer;
-      font-weight:700;
-      transition: transform .05s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
-    }
-    button:hover{
-      box-shadow: 0 10px 26px rgba(255,159,10,.12);
-    }
-    button:active{ transform: translateY(1px); }
-
-    .primary{
-      border-color: rgba(255,159,10,.70);
-      background: linear-gradient(180deg, rgba(255,159,10,.92), rgba(255,127,0,.72));
-      color:#231100;
-      text-shadow: 0 1px 0 rgba(255,255,255,.25);
-      padding: 12px 26px;
-      min-width: 150px;
-    }
-
-    .status{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .pill{
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,159,10,.28);
-      background: rgba(0,0,0,.12);
-      color: var(--muted);
-    }
-    .pill.ok{
-      border-color: rgba(80,220,130,.45);
-      color: #bff3d0;
-      background: rgba(80,220,130,.10);
-    }
-    .pill.bad{
-      border-color: rgba(255,90,90,.45);
-      color: #ffd2d2;
-      background: rgba(255,90,90,.10);
-    }
-    .pill.loading{
-      border-color: rgba(255,159,10,.45);
-      color: var(--text);
-      background: rgba(255,159,10,.10);
-    }
-
-    .footer{
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-      text-align:center;
-    }
-
-    @media (max-width:520px){
-      .shell{ gap: 24px; }
-      .logo{ width:72px; height:72px; border-radius: 12px; }
-      header{flex-direction:column}
-      .primary{min-width: 130px;}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16130F">
+<title>AI成人剧场 · 永久发布页 | 官方最新网址</title>
+<meta name="description" content="AI成人剧场官方网址发布页，网址变更第一时间更新在这里，请收藏本页。提供线路在线检测与最新可用网址。">
+<meta name="keywords" content="AI成人剧场,air18官网,air18官方地址,air18发布页,AI成人剧场最新发布页">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="rating" content="adult">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://air18app.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://air18app.github.io/?lang=zh">
+<link rel="alternate" hreflang="en" href="https://air18app.github.io/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://air18app.github.io/">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI成人剧场">
+<meta property="og:title" content="AI成人剧场 · 永久发布页">
+<meta property="og:description" content="官方网址发布页，网址变更第一时间更新，请收藏本页。">
+<meta property="og:url" content="https://air18app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://air18app.github.io/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://air18app.github.io/logo.png">
+<meta name="twitter:title" content="AI成人剧场 · 永久发布页">
+<meta name="twitter:description" content="官方网址发布页，网址变更第一时间更新，请收藏本页。">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AI成人剧场","alternateName":"air18.app","url":"https://air18app.github.io/","logo":"https://air18app.github.io/logo.png","inLanguage":["zh-CN","en"],
+ "description":"官方网址发布页，提供最新可用网址与线路检测。"}
+</script>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#16130F;--card:#201b14;--line:#332b1f;--text:#f2eadb;--muted:#9a8f79;
+  --accent:#ff9008;--accent-text:#1a1408;--ok:#5bc08a;--bad:#e0706b;--glow:rgba(255,153,3,.18);color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f6f5f1;--card:#fffdf8;--line:#e6dcc8;--text:#2a2418;--muted:#7d725d;
+  --accent:#ff9008;--accent-text:#fff;--ok:#2e8b57;--bad:#c0504d;--glow:rgba(255,144,8,.1);color-scheme:light;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);transition:background .25s,color .25s;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans SC",Helvetica,Arial,sans-serif;
+  line-height:1.6;min-height:100vh;display:flex;justify-content:center}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+body::after{content:"";position:fixed;top:0;left:50%;transform:translateX(-50%);width:min(900px,150vw);height:min(460px,60vh);
+  background:radial-gradient(ellipse 50% 100% at 50% 0%,var(--glow) 0%,transparent 100%);pointer-events:none;z-index:0;transition:background .25s}
+.wrap{position:relative;z-index:1;width:100%;max-width:560px;padding:20px 20px 40px}
+.bar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:clamp(8px,4vw,32px)}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);color:var(--text);
+  border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+.pill:hover{border-color:var(--accent)}
+header{text-align:center;margin-bottom:28px}
+.logo{display:block;width:64px;height:64px;border-radius:18px;margin:0 auto 14px;object-fit:cover}
+h1{margin:0;font-size:clamp(28px,6vw,32px);letter-spacing:.06em}
+.en{margin:4px 0 0;font-size:12px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+.sub{margin:14px 0 0;color:var(--muted);font-size:14px}
+.sub b{color:var(--text)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px;margin-bottom:16px}
+.line{display:flex;align-items:center;gap:12px;padding:14px}
+.line+.line{border-top:1px solid var(--line)}
+.num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-size:13px;font-weight:600}
+.info{flex:1;min-width:0}
+.domain{font-weight:600;font-size:16px;word-break:break-all}
+.tag{display:none;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;background:var(--accent);color:var(--accent-text);vertical-align:2px;font-weight:600}
+.line.best .tag{display:inline-block}
+.desc{font-size:13px;color:var(--muted)}
+.st{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:3px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.checking .dot{animation:pulse 1s infinite}
+.online .dot{background:var(--ok)}.online .st{color:var(--ok)}
+.offline .dot{background:var(--bad)}.offline .st{color:var(--bad)}
+@keyframes pulse{50%{opacity:.25}}
+.btn{flex:none;padding:9px 18px;border-radius:999px;background:var(--accent);color:var(--accent-text);text-decoration:none;font-weight:600;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.retest{display:flex;justify-content:center;padding:8px 0 10px}
+.app{padding:18px}
+.app h2{margin:0 0 6px;font-size:16px}
+.app p{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.tips{font-size:13px;color:var(--muted);padding:0 4px}
+.tips p{margin:10px 0}.tips a{color:var(--accent)}
+kbd{background:var(--line);border-radius:5px;padding:1px 6px;font-size:12px;font-family:inherit}
+footer{margin-top:28px;text-align:center;font-size:12px;color:var(--muted)}
+@media (max-width:420px){.line{flex-wrap:wrap}.line .btn{width:100%;text-align:center}}
+</style>
 </head>
-
 <body>
-  <div class="shell">
-    <svg alt="Logo" class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title>air18</title><defs><linearGradient x1="11.064%" y1="-12.119%" x2="100%" y2="100%" id="a"><stop stop-color="#3e2100" offset="0%"/><stop stop-color="#050300" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><rect fill="url(#a)" width="64" height="64" rx="14"/><path d="M30 15H17a2 2 0 0 0-2 2v30a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V17a2 2 0 0 0-2-2m10.5 17a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17m0 0a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17m-20.962-5.61a.55.55 0 0 1 .552.04l7.438 5.15a.51.51 0 0 1 .222.42.51.51 0 0 1-.222.42l-7.438 5.15a.55.55 0 0 1-.552.04.51.51 0 0 1-.288-.458V26.848c0-.192.111-.37.288-.458" fill="#ff9903" fill-rule="nonzero"/></g></svg>
-    <div style="text-align:center;">
-      <h1 style="margin:0;font-size:32px;">air18.app</h1>
-      <div style="margin-top:3px;font-size:24px;">AI成人剧场</div>
+<main class="wrap">
+  <nav class="bar" aria-label="设置 / Settings">
+    <button class="pill" id="langBtn" type="button">EN</button>
+    <button class="pill" id="themeBtn" type="button"></button>
+  </nav>
+  <header>
+    <img class="logo" src="logo.png" width="64" height="64" alt="AI成人剧场 Logo">
+    <h1 data-i="name">AI成人剧场</h1>
+    <p class="en">Official Address</p>
+    <p class="sub" data-i="sub" data-html>官方网址发布页 · <b>请收藏本页</b> 网址变更会第一时间更新在这里</p>
+  </header>
+
+  <section class="card" aria-label="官方网址线路 / Official lines">
+    <div id="lines"><div class="line checking"><div class="num">1</div><div class="info"><div class="domain">air18app.net<span class="tag">推荐</span></div><div class="desc">推荐线路</div><div class="st"><span class="dot"></span><span>检测中…</span></div></div><a class="btn" href="https://air18app.net/" rel="noopener">进入</a></div><div class="line checking"><div class="num">2</div><div class="info"><div class="domain">air18.app<span class="tag">推荐</span></div><div class="desc">国际官网</div><div class="st"><span class="dot"></span><span>检测中…</span></div></div><a class="btn" href="https://air18.app/" rel="noopener">进入</a></div></div>
+  </section>
+
+  <section class="card app">
+    <h2 data-i="appTitle">像手机APP一样将 AI成人剧场 保存到主屏幕！</h2>
+    <p data-i="appDesc">网址不可用时自动切换线路，装上就不用再找网址。安装时如提示“未知应用”，选择允许即可。</p>
+    <div class="row">
+      <a class="btn ghost" href="https://air18app.net/help" data-i="qr">查看教程</a>
     </div>
+  </section>
 
-    <main class="wrap">
-      <header>
-        <div>
-          <h1 id="welcomeTitle" data-i18n="welcomeTitle">欢迎回家</h1>
-          <div class="sub" id="welcomeSub" data-i18n="welcomeSub">
-            请以此页面展示的最新地址为准，若遇到无法访问，请稍后重试或发邮件给我们 E-mail：air18@duck.com
-          </div>
-        </div>
+  <section class="tips" aria-label="使用提示 / Tips">
+    <p data-i="t1" data-html>上面会自动检测<b>你当前网络</b>能打开哪个网址，最快的会标为“推荐”。</p>
+    <p data-i="t2" data-html>收藏本页：电脑按 <kbd>Ctrl</kbd> + <kbd>D</kbd>（Mac 按 <kbd>⌘</kbd> + <kbd>D</kbd>），手机在浏览器菜单中选“添加书签”。</p>
+    <p data-i="t3" data-html>全部打不开时，发邮件到 <a href="mailto:air18@duck.com">air18@duck.com</a>，将自动回复最新网址。</p>
+    <p data-i="t4" data-html>也可以关注 <a href="#">Telegram 频道</a> 获取最新网址。</p>
+  </section>
+  <footer data-i="foot">AI成人剧场 · 本站所有内容均为 AI 生成 · 仅限 18 周岁以上用户访问</footer>
+</main>
 
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span style="color:var(--muted);font-size:13px;white-space:nowrap;">language:</span>
-          <button class="lang-toggle" id="langBtn" type="button">Auto / 自动</button>
-        </div>
-      </header>
+<script>
+/* ===== 配置 / Config ===== */
+const LINES = [
+  { host: "air18app.net", zh: "推荐线路", en: "Recommended Routes" },
+  { host: "air18.app", zh: "国际官网", en: "International Website" }
+];
+const TIMEOUT_MS = 6000;       // 单个线路检测超时
+const RECHECK_MS = 0;          // 自动复检间隔(毫秒)，0 为关闭，如 60000
 
-      <section class="card">
-        
-        <div class="label" id="Telegram" data-i18n="Telegram">Telegram</div>
-        <div class="url-row">
+const I18N = {
+  zh: {
+    name:"AI成人剧场", title:"AI成人剧场 · 永久发布页 | 官方网址 · 最新网址",
+    sub:"官方网址发布页 · <b>请收藏本页</b> 网址变更会第一时间更新在这里",
+    enter:"进入", rec:"推荐", checking:"检测中…", ok:"在线", bad:"当前网络无法访问,请刷新切换网络或开启代理VPN", retest:"重新检测",
+    appTitle:"像手机APP一样将 AI成人剧场 保存到主屏幕", appDesc:"我们暂时没有客户端，我们非常注重你的隐私，不会获取你的系统权限，更不占用您的一丝宝贵空间，添加到主屏幕即可快速访问。",
+    dl:"下载", qr:"查看教程",
+    t1:"上面会自动检测<b>你当前网络</b>能打开哪个网址，最快的会标为“推荐”。",
+    t2:"收藏本页：电脑按 <kbd>Ctrl</kbd> + <kbd>D</kbd>（Mac 按 <kbd>⌘</kbd> + <kbd>D</kbd>），手机在浏览器菜单中选“添加书签”。",
+    t3:"全部打不开时，发邮件到 <a href=\"mailto:air18@duck.com\">air18@duck.com</a>，将自动回复最新网址。",
+    t4:"也可以关注 <a href=\"https://t.me/+QgoVC-s69RFlMTFh\" target=\"_blank\" rel=\"noopener noreferrer\">Telegram 频道</a> 获取最新网址。",
+    foot:"AI成人剧场 · 本站所有内容均为 AI 生成 · 仅限 18 周岁以上用户访问", desc:"AI成人剧场官方网址发布页，网址变更第一时间更新在这里，请收藏本页。提供线路在线检测与最新可用网址。", light:"☀ 亮色", dark:"🌙 暗色", other:"EN"
+  },
+  en: {
+    name:"air18.app", title:"air18.app · Official Address | Latest URL",
+    sub:"Official address page · <b>Please bookmark this page</b> Any change of address is posted here first.",
+    enter:"Enter", rec:"Best", checking:"Checking…", ok:"Online", bad:"Unreachable from your network", retest:"Re-check",
+    appTitle:"Save air18.app to your home screen, just like a mobile app.", appDesc:"We do not currently offer a standalone app. We prioritize your privacy: we will not request access to your system permissions, nor will we take up any of your valuable storage space. Simply add it to your home screen for quick and easy access.",
+    dl:"Download", qr:"View tutorial",
+    t1:"The lines above are tested from <b>your current network</b>. The fastest online one is marked “Best”.",
+    t2:"Bookmark this page: <kbd>Ctrl</kbd> + <kbd>D</kbd> on desktop (<kbd>⌘</kbd> + <kbd>D</kbd> on Mac), or “Add bookmark” in your mobile browser menu.",
+    t3:"If nothing opens, email <a href=\"mailto:air18@duck.com\">air18@duck.com</a> and you will get an automatic reply with the latest address.",
+    t4:"You can also follow our <a href=\"#\">Telegram channel</a> for updates.",
+    foot:"air18.app · All content on this site is AI-generated · Access restricted to users aged 18 and older", desc:"Official address page of air18.app. Any change of address is posted here first. Bookmark this page for live line checks and the latest working URL.", light:"☀ Light", dark:"🌙 Dark", other:"中文"
+  }
+};
 
-          <div class="actions">
-            <button class="primary"
-              style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px; white-space:nowrap;"
-              onclick="window.open('https://t.me/air18app', '_blank', 'noopener,noreferrer')">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path fill="#231100" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38" />
-              </svg>
-              <span style="white-space:nowrap;">@air18app</span>
-            </button>
-          </div>
-        </div>
+/* ===== 状态 / State ===== */
+let lang = "zh", theme = "dark", results = {};
+const $ = s => document.querySelector(s);
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+};
+const savedLang = store.get("lang"), savedTheme = store.get("theme");
+const qLang = new URLSearchParams(location.search).get("lang");
+lang = (qLang === "zh" || qLang === "en") ? qLang : savedLang || ((navigator.language || "").toLowerCase().startsWith("zh") ? "zh" : "en");
+theme = savedTheme || "dark";
 
-        <div class="label" id="newAddressLabel" data-i18n="newAddressLabel" style="margin-top:24px;">最新地址</div>
-        <div class="url-row">
-          <div class="url-box" id="urlBox">https://NEW_URL_HERE/</div>
+function applyTheme(){
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#16130F" : "#f6f5f1";
+  $("#themeBtn").textContent = theme === "dark" ? I18N[lang].light : I18N[lang].dark;
+}
+function applyLang(){
+  const t = I18N[lang];
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.title = t.title;
+  const setM = (sel, v) => { const e = document.querySelector(sel); if (e) e.setAttribute("content", v); };
+  setM('meta[name="description"]', t.desc);
+  setM('meta[property="og:title"]', t.title);
+  setM('meta[property="og:description"]', t.desc);
+  setM('meta[name="twitter:title"]', t.title);
+  setM('meta[name="twitter:description"]', t.desc);
+  setM('meta[property="og:locale"]', lang === "zh" ? "zh_CN" : "en_US");
+  document.querySelectorAll("[data-i]").forEach(el => {
+    const v = t[el.dataset.i];
+    if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
+  });
+  $("#langBtn").textContent = t.other;
+  applyTheme();
+  renderLines();
+}
 
-          <div class="actions">
-            <button class="primary" id="openBtn" data-i18n="openNowBtn">立即访问</button>
-            <button id="copyBtn" data-i18n="copyBtn">复制</button>
-          </div>
-        </div>
-
-      </section>
-
-      <div class="status" aria-live="polite">
-        <span class="pill loading" id="statusPill" data-i18n="statusPill">状态：检测中…</span>
-        <span id="statusText" data-i18n="statusText">正在测试网址可访问性。</span>
-        <span id="recheckWrap"></span>
+/* ===== 线路渲染 / Render ===== */
+function renderLines(){
+  const t = I18N[lang];
+  const best = bestHost();
+  $("#lines").innerHTML = LINES.map((l,i) => {
+    const r = results[l.host] || { s:"checking" };
+    const label = r.s === "online" ? `${t.ok} · ${r.ms} ms` : r.s === "offline" ? t.bad : t.checking;
+    return `<div class="line ${r.s} ${best === l.host ? "best" : ""}">
+      <div class="num">${i+1}</div>
+      <div class="info">
+        <div class="domain">${l.host}<span class="tag">${t.rec}</span></div>
+        <div class="desc">${l[lang]}</div>
+        <div class="st"><span class="dot"></span><span>${label}</span></div>
       </div>
-    </main>
-    <div class="footer" id="footerText" data-i18n="footerText">
-        说明：Ctrl+D 收藏此页，走失时更好找回家。
-    </div>
-  </div>
+      <a class="btn" href="https://${l.host}/" rel="noopener">${t.enter}</a>
+    </div>`;
+  }).join("");
+}
+function bestHost(){
+  let b = null, m = Infinity;
+  for (const l of LINES){
+    const r = results[l.host];
+    if (r && r.s === "online" && r.ms < m){ m = r.ms; b = l.host; }
+  }
+  return b;
+}
 
-  <script>
-    // 你只需要改这里：
-    const NEW_URL = "https://air18app.net/";
+/* ===== 在线检测 / Online check ===== */
+async function ping(host){
+  const c = new AbortController();
+  const timer = setTimeout(() => c.abort(), TIMEOUT_MS);
+  const t0 = performance.now();
+  try {
+    // no-cors：只要能建立连接并收到响应即视为在线
+    await fetch(`https://${host}/favicon.ico?_=${Date.now()}`, { mode:"no-cors", cache:"no-store", signal:c.signal });
+    return { s:"online", ms:Math.round(performance.now() - t0) };
+  } catch(e){
+    return { s:"offline" };
+  } finally { clearTimeout(timer); }
+}
+async function checkAll(){
+  LINES.forEach(l => results[l.host] = { s:"checking" });
+  renderLines();
+  await Promise.all(LINES.map(async l => {
+    results[l.host] = await ping(l.host);
+    renderLines();
+  }));
+}
 
-    const urlBox = document.getElementById("urlBox");
-    const openBtn = document.getElementById("openBtn");
-    const copyBtn = document.getElementById("copyBtn");
+/* ===== 事件 / Events ===== */
+$("#langBtn").onclick = () => { lang = lang === "zh" ? "en" : "zh"; store.set("lang", lang); applyLang(); };
+$("#themeBtn").onclick = () => { theme = theme === "dark" ? "light" : "dark"; store.set("theme", theme); applyTheme(); };
 
-    const statusPill = document.getElementById("statusPill");
-    const statusText = document.getElementById("statusText");
-    const recheckWrap = document.getElementById("recheckWrap");
-
-    const langBtn = document.getElementById("langBtn");
-
-    urlBox.textContent = NEW_URL;
-
-    // -------- i18n --------
-    const dict = {
-      zh: {
-        autoLabel: "Auto / 自动",
-        welcomeTitle: "欢迎回家",
-        welcomeSub: "请以此页面展示的最新地址为准，若遇到无法访问请检查您的网络，请稍后重试或发邮件给我们 E-mail：air18@duck.com。",
-        Telegram: "加入 Telegram 群组",
-        newAddressLabel: "最新地址",
-        openNowBtn: "立即访问",
-        copyBtn: "复制",
-        footerText: "说明：Ctrl+D 收藏此页，走失时更好找回家。",
-        recheckBtnText: "再次测试",
-
-        // status pill titles (不同状态不同文案)
-        statusPillLoading: "状态：检测中…",
-        statusPillOk: "状态：正常",
-        statusPillBad: "状态：异常",
-
-        // status text bodies (不同失败原因也可区分)
-        statusLoadingText: "正在测试网址可访问性…",
-        statusOkText: "检测成功，目前网络正常。",
-        statusBadTimeout: "检测超时，请检查您当地网络再次测试。",
-        statusBadFetch: "检测失败：您目前的网络不可访问或受浏览器请求策略影响，你仍可点击“立即访问”尝试一下。",
-        statusBadDefault: "检测到不可访问。"
-      },
-      en: {
-        autoLabel: "Auto",
-        welcomeTitle: "Welcome back",
-        welcomeSub: "Please refer to the latest address displayed on this page. If you encounter access problems, please check your network and try again later, or email us at air18@duck.com.",
-        Telegram: "Join the Telegram channel",
-        newAddressLabel: "Latest address",
-        openNowBtn: "Open now",
-        copyBtn: "Copy",
-        footerText: "Note: Press Ctrl+D to bookmark this page; it will make it easier to find your way home if you get lost.",
-        recheckBtnText: "Try again",
-
-        statusPillLoading: "Status: checking…",
-        statusPillOk: "Status: accessible",
-        statusPillBad: "Status: not accessible",
-
-        statusLoadingText: "Testing the address accessibility…",
-        statusOkText: "Check succeeded—currently accessible.",
-        statusBadTimeout: "Timeout—network may be slow or the site isn’t responding.",
-        statusBadFetch: "Check failed—may be unreachable or blocked by browser request policies. You can still click “Open now”.",
-        statusBadDefault: "The address appears inaccessible."
-      }
-    };
-
-    let langMode = "auto"; // auto | zh | en
-    let currentLang = "zh";
-
-    function detectLangByBrowser(){
-      const l = (navigator.language || "").toLowerCase();
-      if(l.includes("zh")) return "zh";
-      return "en";
-    }
-
-    function applyTranslations(){
-      const t = dict[currentLang];
-
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if(!key) return;
-        // 这里不再使用 statusPill / statusText 的旧键，改为直接动态渲染 status
-        if(key === "statusPill") el.textContent = t.statusPillLoading;
-        else if(key === "statusText") el.textContent = t.statusLoadingText;
-        else if(t[key] !== undefined) el.textContent = t[key];
-      });
-
-      const btn = recheckWrap.querySelector("button");
-      if(btn) btn.textContent = t.recheckBtnText;
-    }
-
-    function setLang(mode){
-      langMode = mode;
-      currentLang = (langMode === "auto") ? detectLangByBrowser() : mode;
-
-      langBtn.textContent = (langMode === "auto") ? dict[currentLang].autoLabel : currentLang.toUpperCase();
-      applyTranslations();
-
-      // 同步当前状态（不然可能仍显示“检测中…”）
-      syncCurrentStatusUI();
-    }
-
-    langBtn.addEventListener("click", () => {
-      if(langMode === "auto") setLang("zh");
-      else if(langMode === "zh") setLang("en");
-      else setLang("auto");
-    });
-
-    // -------- recheck button (only if you want it) --------
-    (function renderRecheckButton(){
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.style.padding = "8px 16px";
-      btn.style.borderRadius = "12px";
-      btn.style.fontWeight = "700";
-      btn.style.background = "rgba(255,159,10,.10)";
-      btn.style.border = "1px solid rgba(255,159,10,.25)";
-      btn.style.boxShadow = "none";
-      btn.textContent = dict[currentLang].recheckBtnText;
-      btn.addEventListener("click", runCheck);
-      recheckWrap.appendChild(btn);
-      btn.id = "recheckBtn";
-    })();
-
-    function i18nStatus(kind){
-      const t = dict[currentLang];
-      if(kind === "loading") return t.statusLoadingText;
-      if(kind === "ok") return t.statusOkText;
-      if(kind === "badTimeout") return t.statusBadTimeout;
-      if(kind === "badFetch") return t.statusBadFetch;
-      return t.statusBadDefault;
-    }
-
-    function syncCurrentStatusUI(){
-      const t = dict[currentLang];
-
-      if(statusPill.classList.contains("loading")){
-        statusPill.textContent = t.statusPillLoading;
-        // statusText 不清空，尽量保留你 runCheck 设置的 text：
-        // 但如果当前就是 loading，就把它同步成 loading 文案
-        statusText.textContent = i18nStatus("loading");
-      } else if(statusPill.classList.contains("ok")){
-        statusPill.textContent = t.statusPillOk;
-        // 如果你希望切换语言后成功状态文字也同步，就改成下面这一行
-        statusText.textContent = i18nStatus("ok");
-      } else if(statusPill.classList.contains("bad")){
-        statusPill.textContent = t.statusPillBad;
-        // 失败原因的细分文案在 runCheck 中已写死，这里就按默认失败文案同步
-        // 你要更精确的话我可以继续改成保存最后一次失败原因。
-        statusText.textContent = i18nStatus("badDefault");
-      } else {
-        // 默认回到 loading
-        statusPill.textContent = t.statusPillLoading;
-        statusText.textContent = i18nStatus("loading");
-      }
-    }
-
-    function setStatus(kind, text){
-      statusPill.className = "pill";
-      statusPill.classList.remove("loading","ok","bad");
-
-      if(kind === "loading") statusPill.classList.add("loading");
-      if(kind === "ok") statusPill.classList.add("ok");
-      if(kind === "bad") statusPill.classList.add("bad");
-
-      // statusPill 不再永远是“检测中…”，而是根据状态切换不同文案
-      const t = dict[currentLang];
-      if(kind === "loading") statusPill.textContent = t.statusPillLoading;
-      if(kind === "ok") statusPill.textContent = t.statusPillOk;
-      if(kind === "bad") statusPill.textContent = t.statusPillBad;
-
-      statusText.textContent = text || "";
-    }
-
-    function setRecheckEnabled(enabled){
-      const btn = document.getElementById("recheckBtn");
-      if(!btn) return;
-      btn.disabled = !enabled;
-      btn.style.opacity = enabled ? "1" : ".6";
-      btn.style.cursor = enabled ? "pointer" : "not-allowed";
-    }
-
-    // -------- open / copy --------
-    openBtn.addEventListener("click", () => {
-      window.open(NEW_URL, "_blank", "noopener,noreferrer");
-    });
-
-    copyBtn.addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText(NEW_URL);
-        copyBtn.textContent = (currentLang === "en") ? "Copied" : "已复制";
-        setTimeout(() => copyBtn.textContent = dict[currentLang].copyBtn, 1200);
-      }catch(e){
-        const ta = document.createElement("textarea");
-        ta.value = NEW_URL;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        document.body.removeChild(ta);
-
-        copyBtn.textContent = (currentLang === "en") ? "Copied" : "已复制";
-        setTimeout(() => copyBtn.textContent = dict[currentLang].copyBtn, 1200);
-      }
-    });
-
-    // -------- URL check --------
-    async function testUrl(url){
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 8000);
-
-      try {
-        // 先 HEAD
-        try{
-          const res = await fetch(url, {
-            method: "HEAD",
-            mode: "cors",
-            redirect: "follow",
-            signal: controller.signal,
-            cache: "no-store"
-          });
-          return { ok: !!res && res.ok, via: "HEAD", code: res ? res.status : null };
-        } catch (headErr){
-          // 再 GET（如果站点不允许 HEAD 或 HEAD 被拦截）
-          const res2 = await fetch(url, {
-            method: "GET",
-            mode: "cors",
-            redirect: "follow",
-            signal: controller.signal,
-            cache: "no-store"
-          });
-          return { ok: !!res2 && res2.ok, via: "GET", code: res2 ? res2.status : null };
-        }
-      } catch (e){
-        if (e && e.name === "AbortError") return { ok: false, error: "AbortError" };
-        return { ok: false, error: "FetchError" };
-      } finally {
-        clearTimeout(timeout);
-      }
-    }
-
-    async function runCheck(){
-      setRecheckEnabled(false);
-      setStatus("loading", i18nStatus("loading"));
-
-      const btn = document.getElementById("recheckBtn");
-      if(btn) btn.textContent = "...";
-
-      const result = await testUrl(NEW_URL);
-
-      if(result.ok){
-        const codeText = result.code ? (currentLang === "en" ? ` (HTTP ${result.code})` : `（HTTP ${result.code}）`) : "";
-        setStatus("ok", dict[currentLang].statusOkText + codeText);
-      } else {
-        if(result.error === "AbortError"){
-          setStatus("bad", i18nStatus("badTimeout"));
-        } else {
-          setStatus("bad", i18nStatus("badFetch"));
-        }
-      }
-
-      setRecheckEnabled(true);
-      if(btn) btn.textContent = dict[currentLang].recheckBtnText;
-    }
-
-    // 初始化语言并开始检测
-    setLang("auto");
-    window.addEventListener("load", runCheck);
-  </script>
-  <!-- Default Statcounter code -->
-  <script type="text/javascript">
-  var sc_project=13339341; 
-  var sc_invisible=1; 
-  var sc_security="3bce2d85"; 
-  </script>
-  <script type="text/javascript"
-  src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
-  Statcounter" href="https://statcounter.com/" target="_blank"><img
-  class="statcounter" src="https://c.statcounter.com/13339341/0/3bce2d85/1/"
-  alt="Web Analytics Made Easy - Statcounter"
-  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-  <!-- End of Statcounter Code -->
+applyLang();
+checkAll();
+if (RECHECK_MS > 0) setInterval(checkAll, RECHECK_MS);
+</script>
 </body>
 </html>
